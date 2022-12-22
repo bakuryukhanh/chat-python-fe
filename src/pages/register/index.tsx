@@ -20,7 +20,6 @@ const Register = () => {
     password: string;
   }) => {
     const res = await requestRegister(values);
-    console.log(res);
   };
 
   return (

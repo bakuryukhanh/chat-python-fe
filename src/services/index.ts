@@ -58,3 +58,11 @@ export const requestSendMessage = (
   }
   return request.post(`/messages/send/${roomId}`, form);
 };
+
+export const requestJoinRoom = (roomId: string) => {
+  return request.post(`/rooms/join/${roomId}`);
+};
+
+export const requestCreateRoom = (body: { name: string }) => {
+  return request.post("/rooms/", body);
+};

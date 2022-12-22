@@ -42,6 +42,7 @@ const MainChat = () => {
   });
 
   useSubWs("new_message", (message) => {
+    if (message.room_id != roomId) return;
     queryClient.setQueryData(["messages", roomId], (prev) => {
       if (!prev) return prev;
       return [...prev, message];
